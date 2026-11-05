@@ -1,0 +1,28 @@
+# 게임 원본·산출물 (배포하지 않음)
+*.bin
+*.cue
+*.xdelta
+*.tmp
+orig/
+tmp/
+gfx/out/
+gfx/ko/
+text/src/
+text/ja/
+text/lack.json
+text/GUIDE.md
+gfx/list.md
+settings.ini.bak
+
+# 글꼴·외부 실행 파일·이미지
+fonts/
+*.ttf
+*.otf
+*.exe
+*.dll
+*.png
+
+# 파이썬
+__pycache__/
+*.pyc
+_clean/
