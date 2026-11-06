@@ -35,7 +35,22 @@ class Charset:
         for t in texts:
             chars.update(c for c in t if '가' <= c <= '힣')
         s.chars = sorted(chars)
-        s.code = {c: hook.code_for_index(i) for i, c in enumerate(s.chars)}
+        # 글리프 표 순번 = 코드 순번. 옛 배정(v1.2까지)은 그대로 두어 세이브의 이름이 같은 글자로 보이게 하고,
+        # 트레일이 0xDE/0xDF인 코드에 걸린 음절만 표 끝의 안전한 코드로 옮긴다(옛 코드에도 글리프는 남김).
+        # 게임의 표시 폭 함수(0x80076938)가 0xDE/0xDF를 반각 탁점(폭 0)으로 세어 이름 패널이 잘리기 때문.
+        s.slots = list(s.chars)
+        s.code = {}
+        moved = []
+        for i, c in enumerate(s.chars):
+            if hook.code_for_index(i) & 0xff in (0xDE, 0xDF):
+                moved.append(c)
+            else:
+                s.code[c] = hook.code_for_index(i)
+        for c in moved:
+            while hook.code_for_index(len(s.slots)) & 0xff in (0xDE, 0xDF):
+                s.slots.append(c)
+            s.code[c] = hook.code_for_index(len(s.slots))
+            s.slots.append(c)
 
     def enc(s, text):
         out = bytearray()
@@ -193,7 +208,7 @@ def main():
         report.append('  초과 %s +%d: %r -> %r' % x)
     exe0 = patch_exe_text(open(os.path.join(ORIG, 'PM3.EXE'), 'rb').read(), exe_items, cs, report)
     exe0 = namein.patch(exe0, cs.enc)
-    exe = hook.patch_exe(exe0, glyphs(cs.chars))
+    exe = hook.patch_exe(exe0, glyphs(cs.slots))
     tmp = out + '.tmp'
     shutil.copyfile(SRC_BIN, tmp)
     w = Writer(tmp)

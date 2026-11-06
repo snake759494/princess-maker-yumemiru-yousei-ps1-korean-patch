@@ -3,8 +3,8 @@
  "date": "2026-11-08",
  "game": "Princess Maker - Yumemiru Yousei (Japan) / SCPS-10032 / PS1 (CD, BIN/CUE 2트랙: 데이터 + CD-DA)",
  "asset": "PrincessMaker_YumemiruYousei_PS1_KO_v1.3.xdelta",
- "asset_size": 1337813,
- "asset_sha256": "b383ab7293e3482ad3b11efe926dc0a0f312fc740376fec281ffa49710b2f16c",
+ "asset_size": 1337975,
+ "asset_sha256": "3eeb5db5dbde077fca3932225201c012c074cbe96ada678357c41003cf459a7f",
  "xdelta_options": "xdelta3 -e -0 -S none -A (no compression, no secondary compression, no application header)",
  "patched_track": "Track 1 only (Track 2 audio is unchanged)",
  "source_bin_name": "Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin",
@@ -17,7 +17,7 @@
  "track2_md5": "09dd6a556287ede17ef474aa385c34fb",
  "track2_sha256": "ad5733140af8451c784a359f96b1fb113212a1e9ba2527e1c74d4839fbec9287",
  "output_bin_size": 436239552,
- "output_bin_md5": "3fa98fc2facbbec47bc4a5118f62e801",
- "output_bin_sha1": "fbcee512ecd231b71e98dc9c24bac6751a51c7b0",
- "output_bin_sha256": "449e6a30f985b9c0919c0d7c0e98b3236f61764c9a99ba0f8c94479ad5ff1da1"
+ "output_bin_md5": "1e9ed68b16410bbbd9aff78cfc00dd53",
+ "output_bin_sha1": "da8931216c0c423cc3a54af664e86f6daae20a6a",
+ "output_bin_sha256": "17fb40ccf4106a24315b3181cdc3f1a36cbdcc5e370ded8ff3275f994a9ff3e1"
 }
