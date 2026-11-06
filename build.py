@@ -4,7 +4,7 @@ import sys, os, json, shutil, struct, glob
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, 'tools'))
-from evx import blocks, code_start, strings, is_text, SLOT, ref_map, reloc_safe
+from evx import blocks, code_start, strings, is_text, SLOT, ref_map, reloc_safe, STRING_OPS
 import hook, kfont, namein, gfx
 from disc import Writer
 
@@ -66,6 +66,25 @@ def glyphs(chars):
     return [kfont.encode(kfont.render(c)) for c in chars]
 
 
+# 명령 0x77(_STRsetch, 0x8006430c)은 문자열 오프셋 0x10~0x5000만 받는다(넘으면 "_STRsetch er" 후 멈춤).
+# 오프셋을 변수에 저장했다가 0x57 등으로 꺼내 0x77에 넘기는 경우도 있어 추적이 어려우므로,
+# 0x77이 아닌 문자열 명령에 바로 쓰이는 것이 확인된 참조만 0x5000 너머에 둘 수 있다.
+STR_MAX = 0x5000
+
+
+def needs_low(ins, ks):
+    for k in ks:
+        for o, op, a in ins[k + 1:k + 8]:
+            if op in (0x01, 0x03, 0x05, 0x07):
+                continue
+            if op == 0x77 or op not in STRING_OPS:
+                return True
+            break
+        else:
+            return True
+    return False
+
+
 def layout_block(i, b, ko, cs, skip):
     c0, ins = code_start(b)
     rm = ref_map(b, ins)
@@ -103,12 +122,13 @@ def layout_block(i, b, ko, cs, skip):
         else:
             m.append((a, z))
     free = m
-    pend.sort(key=lambda x: -len(x[2]))
+    pend.sort(key=lambda x: (not needs_low(ins, rm[x[0]]), -len(x[2])))
     for o, s, e in pend:
         need = len(e) + 1
+        low = needs_low(ins, rm[o])
         free.sort(key=lambda x: x[1] - x[0])
         for k, (a, z) in enumerate(free):
-            if z - a >= need:
+            if z - a >= need and (not low or a + need <= STR_MAX):
                 break
         else:
             fail.append((o, s, e))
