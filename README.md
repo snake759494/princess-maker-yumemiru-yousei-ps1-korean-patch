@@ -1,10 +1,10 @@
 # 프린세스 메이커 ~꿈꾸는 요정~ PS1 한글패치
 
-PS1 일본판 **プリンセスメーカー ゆめみる妖精 (SCPS-10032)**용 비공식 한국어 패치입니다. **이벤트 대사·나레이션·선택지·메뉴·상점·능력치 표·아이템 설명·세이브 안내 등 게임 안의 문장 전체**를 한국어로 바꿨습니다. **타이틀 메뉴·메인 메뉴 버튼·스케줄 항목표·달력(월·요일)·휴일·페이즈 배너·상태 화면·별자리·아이템 이름 같은 그림 글자**도 한글로 다시 그렸고, **이름 입력판**은 한글 음절표로 바꿨습니다. 현재 배포판은 **v1.0 (2026-11-06)**입니다.
+PS1 일본판 **プリンセスメーカー ゆめみる妖精 (SCPS-10032)**용 비공식 한국어 패치입니다. **이벤트 대사·나레이션·선택지·메뉴·상점·능력치 표·아이템 설명·세이브 안내 등 게임 안의 문장 전체**를 한국어로 바꿨습니다. **타이틀 메뉴·메인 메뉴 버튼·스케줄 항목표·달력(월·요일)·휴일·페이즈 배너·상태 화면·별자리·아이템 이름 같은 그림 글자**도 한글로 다시 그렸고, **이름 입력판**은 한글 음절표로 바꿨습니다. 현재 배포판은 **v1.1 (2026-11-07)**입니다.
 
 [패치 다운로드](https://github.com/snake759494/princess-maker-yumemiru-yousei-ps1-korean-patch/releases/latest) · [기술 설명](docs/TECHNICAL.md) · [재빌드](docs/BUILD.md) · [변경 기록](CHANGELOG.md) · [권리 안내](RIGHTS.md)
 
-릴리즈 첨부 파일은 한글패치 **PrincessMaker_YumemiruYousei_PS1_KO_v1.0.xdelta**뿐입니다. 저장소에는 제작 소스와 한국어 번역만 공개합니다. 원본·완성 디스크 이미지, 추출한 게임 파일·그림, 일본어 원문, 글꼴 파일, 외부 실행 파일은 포함하지 않습니다. GitHub가 자동으로 만드는 Source code ZIP/TAR는 저장소 소스를 압축한 것이며 게임 파일이 아닙니다.
+릴리즈 첨부 파일은 한글패치 **PrincessMaker_YumemiruYousei_PS1_KO_v1.1.xdelta**뿐입니다. 저장소에는 제작 소스와 한국어 번역만 공개합니다. 원본·완성 디스크 이미지, 추출한 게임 파일·그림, 일본어 원문, 글꼴 파일, 외부 실행 파일은 포함하지 않습니다. GitHub가 자동으로 만드는 Source code ZIP/TAR는 저장소 소스를 압축한 것이며 게임 파일이 아닙니다.
 
 ## 게임 소개 및 대상 버전
 
@@ -23,11 +23,11 @@ PS1 일본판 **プリンセスメーカー ゆめみる妖精 (SCPS-10032)**용
 | 원본 Track 1 BIN SHA-1 | `82ba324dbefe52c2c56917797e5c964915c7fd43` |
 | 원본 Track 1 BIN SHA-256 | `29236fa820092e3b4bae64b2d7b0831331dd555ff08269e84bb359f59cc1f9a2` |
 | 원본 Track 2 BIN (변경 없음) | 44,793,840 바이트, MD5 `09dd6a556287ede17ef474aa385c34fb` |
-| xdelta 파일 크기 | 1,343,370 바이트 |
-| xdelta SHA-256 | `96bdb812ae73c4774a72ebc66f9816917cbb7fee5c2a53ebf9327f3b1f49d021` |
+| xdelta 파일 크기 | 1,337,722 바이트 |
+| xdelta SHA-256 | `c631ef31f90bfd12dc0f82192b47cf3f016dee7c87248e4f2f7ab2956963b35c` |
 | 적용 결과 Track 1 BIN 크기 | 436,239,552 바이트 (원본보다 536,256 바이트 큼) |
-| 적용 결과 Track 1 BIN SHA-1 | `bd0672be7699797a621bd9ad0039fb9e0be390f6` |
-| 적용 결과 Track 1 BIN SHA-256 | `a17825fefbb95dc3f27d60b5cf22f46911347b045ba453ff9e98cdcfb2453d45` |
+| 적용 결과 Track 1 BIN SHA-1 | `ea177db8ca824f007be10b2899adc026d05252ec` |
+| 적용 결과 Track 1 BIN SHA-256 | `dd473994902ceeaff2385254172b0b951453bb69c07b9348e3a22ced79e0ba74` |
 
 원본 게임 파일은 사용자가 직접 준비해야 합니다.
 
@@ -43,7 +43,7 @@ Get-FileHash -Algorithm MD5 -LiteralPath '.\Princess Maker - Yumemiru Yousei (Ja
 
 ### xdelta UI 사용
 
-1. 릴리즈에서 `PrincessMaker_YumemiruYousei_PS1_KO_v1.0.xdelta`를 받습니다.
+1. 릴리즈에서 `PrincessMaker_YumemiruYousei_PS1_KO_v1.1.xdelta`를 받습니다.
 2. xdelta3 패치를 지원하는 도구에서 **Apply Patch** 기능을 엽니다.
 3. **Patch**에는 xdelta 파일을, **Source File**에는 해시가 일치하는 원본 **Track 1** `.bin`을 선택합니다.
 4. **Output File**에는 새 파일 이름을 지정합니다(예: `Princess Maker - Yumemiru Yousei (Korean) (Track 1).bin`).
@@ -64,13 +64,13 @@ xdelta는 호환성을 위해 압축·2차 압축·파일 경로 헤더 없이 �
 ### 명령줄 사용
 
 ```powershell
-.\xdelta3.exe -d -s '.\Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin' '.\PrincessMaker_YumemiruYousei_PS1_KO_v1.0.xdelta' '.\Princess Maker - Yumemiru Yousei (Korean) (Track 1).bin'
+.\xdelta3.exe -d -s '.\Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin' '.\PrincessMaker_YumemiruYousei_PS1_KO_v1.1.xdelta' '.\Princess Maker - Yumemiru Yousei (Korean) (Track 1).bin'
 ```
 
 해시를 자동으로 검사하고 CUE까지 만들어 주는 도구도 있습니다. Python 3과 xdelta3가 필요하며, 같은 이름의 출력 파일이 이미 있으면 덮어쓰지 않습니다. Track 2 BIN은 원본 Track 1과 같은 폴더에 있어야 합니다.
 
 ```powershell
-python tools/apply_release.py --xdelta '.\xdelta3.exe' --source '.\Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin' --patch '.\PrincessMaker_YumemiruYousei_PS1_KO_v1.0.xdelta' --output '.\Princess Maker - Yumemiru Yousei (Korean) (Track 1).bin'
+python tools/apply_release.py --xdelta '.\xdelta3.exe' --source '.\Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin' --patch '.\PrincessMaker_YumemiruYousei_PS1_KO_v1.1.xdelta' --output '.\Princess Maker - Yumemiru Yousei (Korean) (Track 1).bin'
 ```
 
 ### 실행
@@ -83,7 +83,7 @@ python tools/apply_release.py --xdelta '.\xdelta3.exe' --source '.\Princess Make
 | --- | --- |
 | 이벤트 스크립트 | `PM.EVX`의 고유 문자열 8,144개 전체: 대사·나레이션·선택지·메뉴·상점·능력치 표·이벤트·엔딩 |
 | 실행파일 문자열 | `PM3.EXE` 102개: 세이브 제목·안내, 아버지 신분, 아이템·과자 설명, 병원·잔고 안내 등 |
-| 글꼴 | 16×15 한글 1,032자(갈무리14 원래 크기), BIOS 한자 글꼴 호출을 가로채 공급 |
+| 글꼴 | 16×15 칸에 한글 1,032자(갈무리11 원래 크기 12px), BIOS 한자 글꼴 호출을 가로채 공급 |
 | 이름 입력 | 히라가나·가타카나 표를 이름용 한글 음절 161자로 교체, 전환 버튼 「영·다음·이전」 |
 | 그림 글자 | `PM.DT0` 그림 21장: 타이틀 메뉴, 메인 메뉴 버튼, 스케줄 항목표, 달력(월·요일), 페이즈·일, 휴일 배너, 페이즈 시작·완료 배너, 별자리·혈액형·아버지 신분 표, 상태 화면, 선물·아이템·요리·그림 이름 |
 | 영어 표기 | 메뉴·달력·배너의 영어(NEW GAME, JAN~DEC, SUN~SAT, HOLIDAY, PHASE START 등)도 한글로 |
@@ -98,6 +98,7 @@ python tools/apply_release.py --xdelta '.\xdelta3.exe' --source '.\Princess Make
 ### 번역하지 않은 것
 
 - 타이틀 로고(PRINCESS MAKER / FAERY TALES COME TRUE)와 저작권 표기
+- 오프닝 동영상 속 세로쓰기 시구
 - 하트·땀 같은 아이콘 기호
 - 음성(대사 음성은 일본어 그대로)
 

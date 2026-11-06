@@ -10,7 +10,7 @@
   NanumSquareNeo-cBd.ttf  NanumSquareNeo-dEb.ttf  NanumSquareNeo-eHv.ttf
   SeoulHangangM.ttf  SeoulHangangB.ttf  SeoulHangangEB.ttf
   <이 저장소>/
-    fonts/Galmuri7.ttf  fonts/Galmuri9.ttf  fonts/Galmuri14.ttf
+    fonts/Galmuri7.ttf  fonts/Galmuri9.ttf  fonts/Galmuri11.ttf
 ```
 
 - Python 3.13, `numpy`, `Pillow`, `keystone-engine`
@@ -38,7 +38,7 @@ python build.py
 ## 배포 파일
 
 ```powershell
-xdelta3 -e -0 -S none -A -s "Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin" "Princess Maker - Yumemiru Yousei (Japan) (Track 1) [KR].bin" PrincessMaker_YumemiruYousei_PS1_KO_v1.0.xdelta
+xdelta3 -e -0 -S none -A -s "Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin" "Princess Maker - Yumemiru Yousei (Japan) (Track 1) [KR].bin" PrincessMaker_YumemiruYousei_PS1_KO_v1.1.xdelta
 ```
 
 ## 번역 수정

@@ -125,13 +125,13 @@ def tac8_cells(tim_data, w_hw, cells):
     return bytes(d)
 
 
-GALMURI14 = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'fonts', 'Galmuri14.ttf')
+GALMURI11 = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'fonts', 'Galmuri11.ttf')
 
 
 def render(ch, w=16, h=15):
-    """본문 한글: 갈무리14 원래 크기(15px) 비트맵 그대로, 확대·축소·안티에일리어스 없음"""
-    ft = font(15, GALMURI14)
+    """본문 한글: 갈무리11 원래 크기(12px) 비트맵 그대로, 확대·축소·안티에일리어스 없음.
+    게임의 이름 패널·작은 날짜 칸은 글리프 왼쪽 12칸만 쓰므로 폭 12(0~11열)에 맞춘다."""
+    ft = font(12, GALMURI11)
     im = Image.new('1', (w, h), 0); d = ImageDraw.Draw(im); d.fontmode = '1'
-    gw = d.textlength(ch, font=ft)
-    d.text(((w - int(gw)) // 2, -1), ch, 1, font=ft)
+    d.text((0, 1), ch, 1, font=ft)
     return im.convert('L')

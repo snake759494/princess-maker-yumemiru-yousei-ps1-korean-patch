@@ -8,7 +8,7 @@
 
 게임 안 한글은 다음 글꼴로 그렸습니다. 글꼴 파일 자체는 저장소에 넣지 않았습니다(`docs/FONT_CREDITS.md` 참고).
 
-- 갈무리7·갈무리9·갈무리14(Minseo Lee), SIL Open Font License 1.1 — `LICENSES/`에 전문 보존
+- 갈무리7·갈무리9·갈무리11(Minseo Lee), SIL Open Font License 1.1 — `LICENSES/`에 전문 보존
 - 나눔스퀘어 네오(NAVER), SIL Open Font License 1.1 — `LICENSES/`에 전문 보존
 - 서울한강체(서울특별시), 서울시 서체 이용 조건
 
