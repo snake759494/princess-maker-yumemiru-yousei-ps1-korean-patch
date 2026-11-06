@@ -33,6 +33,8 @@ def patch(exe, enc):
     for start in (HIRA, KATA):
         for c, p1, s, p2, s2 in list(entries(bytes(d), start)):
             t = s.decode('cp932')
+            if t.startswith(':'):
+                t = t[2:]   # 가타카나 표의 「ﾋﾗｶﾞﾅ」는 반각 표시(ESC:)가 붙어 있다. 한글은 보통 크기로 쓴다
             o = p1 - B
             if c >= 0x80 and t not in ('～', '・', 'ー'):
                 k = next(it)

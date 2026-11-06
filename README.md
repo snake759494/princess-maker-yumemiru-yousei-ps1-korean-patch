@@ -1,10 +1,10 @@
 # 프린세스 메이커 ~꿈꾸는 요정~ PS1 한글패치
 
-PS1 일본판 **プリンセスメーカー ゆめみる妖精 (SCPS-10032)**용 비공식 한국어 패치입니다. **이벤트 대사·나레이션·선택지·메뉴·상점·능력치 표·아이템 설명·세이브 안내 등 게임 안의 문장 전체**를 한국어로 바꿨습니다. **타이틀 메뉴·메인 메뉴 버튼·스케줄 항목표·달력(월·요일)·휴일·페이즈 배너·상태 화면·별자리·아이템 이름 같은 그림 글자**도 한글로 다시 그렸고, **이름 입력판**은 한글 음절표로 바꿨습니다. 현재 배포판은 **v1.2 (2026-11-08)**입니다.
+PS1 일본판 **プリンセスメーカー ゆめみる妖精 (SCPS-10032)**용 비공식 한국어 패치입니다. **이벤트 대사·나레이션·선택지·메뉴·상점·능력치 표·아이템 설명·세이브 안내 등 게임 안의 문장 전체**를 한국어로 바꿨습니다. **타이틀 메뉴·메인 메뉴 버튼·스케줄 항목표·달력(월·요일)·휴일·페이즈 배너·상태 화면·별자리·아이템 이름 같은 그림 글자**도 한글로 다시 그렸고, **이름 입력판**은 한글 음절표로 바꿨습니다. 현재 배포판은 **v1.3 (2026-11-08)**입니다.
 
 [패치 다운로드](https://github.com/snake759494/princess-maker-yumemiru-yousei-ps1-korean-patch/releases/latest) · [기술 설명](docs/TECHNICAL.md) · [재빌드](docs/BUILD.md) · [변경 기록](CHANGELOG.md) · [권리 안내](RIGHTS.md)
 
-릴리즈 첨부 파일은 한글패치 **PrincessMaker_YumemiruYousei_PS1_KO_v1.2.xdelta**뿐입니다. 저장소에는 제작 소스와 한국어 번역만 공개합니다. 원본·완성 디스크 이미지, 추출한 게임 파일·그림, 일본어 원문, 글꼴 파일, 외부 실행 파일은 포함하지 않습니다. GitHub가 자동으로 만드는 Source code ZIP/TAR는 저장소 소스를 압축한 것이며 게임 파일이 아닙니다.
+릴리즈 첨부 파일은 한글패치 **PrincessMaker_YumemiruYousei_PS1_KO_v1.3.xdelta**뿐입니다. 저장소에는 제작 소스와 한국어 번역만 공개합니다. 원본·완성 디스크 이미지, 추출한 게임 파일·그림, 일본어 원문, 글꼴 파일, 외부 실행 파일은 포함하지 않습니다. GitHub가 자동으로 만드는 Source code ZIP/TAR는 저장소 소스를 압축한 것이며 게임 파일이 아닙니다.
 
 ## 게임 소개 및 대상 버전
 
@@ -43,7 +43,7 @@ Get-FileHash -Algorithm MD5 -LiteralPath '.\Princess Maker - Yumemiru Yousei (Ja
 
 ### xdelta UI 사용
 
-1. 릴리즈에서 `PrincessMaker_YumemiruYousei_PS1_KO_v1.2.xdelta`를 받습니다.
+1. 릴리즈에서 `PrincessMaker_YumemiruYousei_PS1_KO_v1.3.xdelta`를 받습니다.
 2. xdelta3 패치를 지원하는 도구에서 **Apply Patch** 기능을 엽니다.
 3. **Patch**에는 xdelta 파일을, **Source File**에는 해시가 일치하는 원본 **Track 1** `.bin`을 선택합니다.
 4. **Output File**에는 새 파일 이름을 지정합니다(예: `Princess Maker - Yumemiru Yousei (Korean) (Track 1).bin`).
@@ -64,13 +64,13 @@ xdelta는 호환성을 위해 압축·2차 압축·파일 경로 헤더 없이 �
 ### 명령줄 사용
 
 ```powershell
-.\xdelta3.exe -d -s '.\Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin' '.\PrincessMaker_YumemiruYousei_PS1_KO_v1.2.xdelta' '.\Princess Maker - Yumemiru Yousei (Korean) (Track 1).bin'
+.\xdelta3.exe -d -s '.\Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin' '.\PrincessMaker_YumemiruYousei_PS1_KO_v1.3.xdelta' '.\Princess Maker - Yumemiru Yousei (Korean) (Track 1).bin'
 ```
 
 해시를 자동으로 검사하고 CUE까지 만들어 주는 도구도 있습니다. Python 3과 xdelta3가 필요하며, 같은 이름의 출력 파일이 이미 있으면 덮어쓰지 않습니다. Track 2 BIN은 원본 Track 1과 같은 폴더에 있어야 합니다.
 
 ```powershell
-python tools/apply_release.py --xdelta '.\xdelta3.exe' --source '.\Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin' --patch '.\PrincessMaker_YumemiruYousei_PS1_KO_v1.2.xdelta' --output '.\Princess Maker - Yumemiru Yousei (Korean) (Track 1).bin'
+python tools/apply_release.py --xdelta '.\xdelta3.exe' --source '.\Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin' --patch '.\PrincessMaker_YumemiruYousei_PS1_KO_v1.3.xdelta' --output '.\Princess Maker - Yumemiru Yousei (Korean) (Track 1).bin'
 ```
 
 ### 실행

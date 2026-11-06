@@ -25,12 +25,16 @@ def hook_src(n_big):
     andi $t4,$t0,0xff
     sltiu $t5,$t4,0x80
     xori $t5,$t5,1
+    sltiu $t6,$t4,0xe0
+    xori $t6,$t6,1
+    sll $t6,$t6,1
+    addu $t5,$t5,$t6
     subu $t4,$t4,$t5
     addiu $t4,$t4,-0x40
     addiu $t2,$t1,-0xf0
     sltiu $t3,$t2,13
     beq $t3,$zero,orig
-    addiu $t6,$zero,188
+    addiu $t6,$zero,186
     multu $t2,$t6
     mflo $t6
     addu $t6,$t6,$t4
@@ -149,9 +153,14 @@ def jal(t):
 
 
 def code_for_index(i):
-    """한글 순번 i -> SJIS 코드 (사용자 정의 영역 0xF040부터, 트레일 0x7F 제외)"""
-    lead = 0xF0 + i // 188; t = i % 188
-    return (lead << 8) | (0x40 + t + (1 if t >= 0x3F else 0))
+    """한글 순번 i -> SJIS 코드 (사용자 정의 영역 0xF040부터).
+    트레일 0x7F와 0xDE·0xDF는 쓰지 않는다: 게임의 표시 폭 함수(0x80076938)는 리드 0x81~0x9F만
+    2바이트로 보므로, 그 밖의 리드 뒤에 오는 0xDE/0xDF를 반각 탁점(폭 0)으로 세어 이름 등이 잘린다."""
+    lead = 0xF0 + i // 186; t = i % 186
+    b = 0x40 + t
+    if b >= 0x7F: b += 1
+    if b >= 0xDE: b += 2
+    return (lead << 8) | b
 
 
 def attach(exe, region):

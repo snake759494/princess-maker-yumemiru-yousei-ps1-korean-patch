@@ -38,7 +38,7 @@ python build.py
 ## 배포 파일
 
 ```powershell
-xdelta3 -e -0 -S none -A -s "Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin" "Princess Maker - Yumemiru Yousei (Japan) (Track 1) [KR].bin" PrincessMaker_YumemiruYousei_PS1_KO_v1.2.xdelta
+xdelta3 -e -0 -S none -A -s "Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin" "Princess Maker - Yumemiru Yousei (Japan) (Track 1) [KR].bin" PrincessMaker_YumemiruYousei_PS1_KO_v1.3.xdelta
 ```
 
 ## 번역 수정
