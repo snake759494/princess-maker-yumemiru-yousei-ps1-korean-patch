@@ -1,5 +1,5 @@
 """릴리즈 xdelta 를 해시 검사 후 적용하고 CUE 를 만든다.
-사용: python tools/apply_release.py --xdelta xdelta3.exe --source "Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin" --patch PrincessMaker_YumemiruYousei_PS1_KO_v1.1.xdelta --output "Princess Maker - Yumemiru Yousei (Korean) (Track 1).bin"
+사용: python tools/apply_release.py --xdelta xdelta3.exe --source "Princess Maker - Yumemiru Yousei (Japan) (Track 1).bin" --patch PrincessMaker_YumemiruYousei_PS1_KO_v1.2.xdelta --output "Princess Maker - Yumemiru Yousei (Korean) (Track 1).bin"
 Track 2(음악) BIN 은 바뀌지 않으므로 원본을 그대로 쓴다(원본 Track 1 과 같은 폴더에 있어야 함).
 """
 import argparse, hashlib, json, os, subprocess, sys

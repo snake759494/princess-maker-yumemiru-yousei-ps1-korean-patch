@@ -181,7 +181,7 @@
 "2724": "\n경호원 스카우트",
 "2725": "체력  :{E}%st2 {E}%B100\n지력  :{E}%intel2 {E}%B101\n기력  :{E}%kiryoku2 {E}%B102\n자존심:{E}%pride2 {E}%B103\n",
 "2726": "도덕  :{E}%moral2 {E}%B104\n기품  :{E}%kihin2 {E}%B105\n성품  :{E}%kidate2 {E}%B106\n센스  :{E}%sence2 {E}%B107\n",
-"2727": "매력  :{E}%charm2 {E}%B108\n스트레스:{E}%stls2 {E}%B109\n무용  :{E}%buyu2 {E}%B10A\n신뢰도:{E}%trust {E}%Btrust",
+"2727": "매력  :{E}%charm2 {E}%B108\n피로도:{E}%stls2 {E}%B109\n무용  :{E}%buyu2 {E}%B10A\n신뢰도:{E}%trust {E}%Btrust",
 "2728": "{E}%bth_m월{E}%bth_d일생신장:{E}%hightcm",
 "2729": "체중:{E}%weightkg가슴:{E}%bstcm허리:{E}%wtcm힙  :{E}%hipcm",
 "2730": " {E}[01 시간 진행 {E}]\n {E}[02 시간 되감기 {E}]\n {E}[03설정{E}]\n {E}[04처음 화면{E}]",
